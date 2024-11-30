@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333; /* Button icon color */
+  background-color: #fff; /* Button background color */
+  border-radius: 10%;
+  opacity: 0.8;
+  /* Make buttons round */
+  width: 12px;
+  height: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px !important ;
+  color: black;
+}
+
+.btn-hero {
+  @apply px-6 py-2 text-xl rounded bg-white text-black hover:text-gray-700 hover:opacity-[0.8] transition-opacity duration-300;
+}
+.btn-black {
+  @apply px-6 py-2 text-xl rounded border-black border-[1px] bg-white text-black hover:text-gray-700 hover:opacity-[0.8] transition-opacity duration-300;
+}
+
+.btn-category {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[119px]   py-3 text-xl rounded bg-white hover:bg-gray-100 text-black   transition-opacity duration-300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+.animate-scroll {
+  /* display: inline-block; */
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.paused {
+  animation-play-state: paused;
+}
