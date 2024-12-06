@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import LastArrivalsCard from "./LastArrivalsCard";
+import ProductsCard from "./ProductsCard";
 import jaket from "../assets/images/manproduct.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -21,28 +21,28 @@ function LastArrivals({ text = "Last Arrivals", link = "" }) {
         navigation
       >
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
         <SwiperSlide>
-          <LastArrivalsCard imageSrc={jaket} />
+          <ProductsCard imageSrc={jaket} />
         </SwiperSlide>
       </Swiper>
     </div>

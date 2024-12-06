@@ -7,11 +7,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Men from "./pages/Men";
 import { ProductProvider } from "./context/ProductContext";
+import ViewAll from "./pages/ViewAll";
 
 // Lazy load pages for code-splitting
 const HomePage = lazy(() => import("./pages/HomePage"));
-const ProductsPage = lazy(() => import("./pages/ProductsPage"));
-const ProductDetailPage = lazy(() => import("./pages/ProductDetailPage"));
+
+const ProductDetailPage = lazy(() => import("./components/ProductDetailPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const CartPage = lazy(() => import("./pages/CartPage"));
 
@@ -25,8 +26,8 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/women' element={<Women />} />
             <Route path='/men' element={<Men />} />
-            <Route path='/women' element={<Women />} />
-            <Route path='/products' element={<ProductsPage />} />
+            <Route path='/ViewAll' element={<ViewAll />} />
+
             <Route path='/product/:id' element={<ProductDetailPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/cart' element={<CartPage />} />

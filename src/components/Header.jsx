@@ -46,18 +46,18 @@ const Header = () => {
         <NavLink
           to='/men'
           className={({ isActive }) =>
-            `cursor-pointer ${isActive ? "underline underline-offset-4" : ""}`
+            `cursor-pointer ${isActive ? "underline underline-offset-4" : "hover:underline"}`
           }
         >
           Men
         </NavLink>
         <NavLink
-          to='/products'
+          to='/ViewAll'
           className={({ isActive }) =>
-            `cursor-pointer ${isActive ? "underline underline-offset-4" : ""}`
+            `cursor-pointer ${isActive ? "underline underline-offset-4" : "hover:underline"}`
           }
         >
-          Sale
+          ViewAll
         </NavLink>
       </nav>
 
