@@ -1,35 +1,38 @@
 import { FiChevronRight } from "react-icons/fi";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Breadcrumb = () => {
-  const location = useLocation();
-
-  // Göstərilməli səhifələr
-  const validPaths = ["/women/view-all", "/men/view-all", "/ViewAll"];
-
-  if (!validPaths.includes(location.pathname)) {
-    return null; // Breadcrumb yalnız müəyyən səhifələrdə göstərilir
-  }
-
-  // Dinamik breadcrumb adları
-  const getBreadcrumbName = () => {
-    if (location.pathname === "/women/view-all") return "View All Women";
-    if (location.pathname === "/men/view-all") return "View All Men";
-    if (location.pathname === "/ViewAll") return "ViewAll";
-    return "";
-  };
+function Breadcrumb() {
+  const { category } = useParams();
 
   return (
-    <nav className='my-8'>
-      <ul className='flex items-center space-x-2 '>
+    <nav className='text-lg mb-4 text pl-9 py-5'>
+      <ul className='flex items-center space-x-2 text-black'>
+        {/* Ana sayfa linki */}
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/' className='hover:text-black'>
+            Home
+          </Link>
         </li>
-        <FiChevronRight />
-        <li>{getBreadcrumbName()}</li>
+        <li className='text-black'>
+          <FiChevronRight />
+        </li>
+        {/* ViewAll linki */}
+        <li>
+          <Link to='/ViewAll' className='hover:text-black'>
+            View All
+          </Link>
+        </li>
+        {category && (
+          <>
+            <li className='text-black'>
+              <FiChevronRight />
+            </li>
+            <li className='capitalize text-black font-normal'>{category}</li>
+          </>
+        )}
       </ul>
     </nav>
   );
-};
+}
 
 export default Breadcrumb;

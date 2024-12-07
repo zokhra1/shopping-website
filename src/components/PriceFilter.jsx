@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Range } from "react-range";
 
@@ -37,6 +36,7 @@ const PriceFilter = () => {
           )}
           renderThumb={({ props, index }) => (
             <div
+              key={index}
               {...props}
               className='w-3 h-3 bg-black rounded-full'
               style={{

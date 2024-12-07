@@ -9,6 +9,8 @@ import Men from "./pages/Men";
 import { ProductProvider } from "./context/ProductContext";
 import ViewAll from "./pages/ViewAll";
 
+import ProductsPage from "./components/ProductsPage";
+
 // Lazy load pages for code-splitting
 const HomePage = lazy(() => import("./pages/HomePage"));
 
@@ -26,7 +28,10 @@ function App() {
             <Route path='/' element={<HomePage />} />
             <Route path='/women' element={<Women />} />
             <Route path='/men' element={<Men />} />
-            <Route path='/ViewAll' element={<ViewAll />} />
+
+            <Route path='/ViewAll' element={<ViewAll />}>
+              <Route path=':category' element={<ProductsPage />} />
+            </Route>
 
             <Route path='/product/:id' element={<ProductDetailPage />} />
             <Route path='/login' element={<LoginPage />} />

@@ -1,14 +1,29 @@
+import { useParams } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import ProductsCard from "./ProductsCard";
 
 function ProductSide() {
   const { products } = useProducts();
-  console.log(products);
+  const { category } = useParams();
+  const filteredProducts =
+    !category || category === "all products"
+      ? products
+      : products.filter((product) => product.category === category);
+
+  // Helper function to capitalize each word's first letter
+  const capitalizeWords = (string) => {
+    return string
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+  };
 
   return (
     <div className='pl-5'>
       <div className='header'>
-        {/* <h1 className='text-lg'>{products[0].category}</h1> */}
+        <h1 className='text-[24px]'>
+          {category ? capitalizeWords(category) : "All Products"}
+        </h1>
         <p>
           This is your category description. Its a great place to tell customers
           what this category is about,<br></br> connect with your audience and
@@ -17,7 +32,7 @@ function ProductSide() {
       </div>
 
       <div className='grid grid-cols-4 mb-20 gap-8 mr-5'>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductsCard
             key={product.title}
             imageSrc={product.image}
