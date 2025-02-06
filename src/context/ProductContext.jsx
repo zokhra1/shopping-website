@@ -39,24 +39,6 @@ function ProductProvider({ children }) {
     fetchProducts();
   }, []);
 
-  // async function CategoriesProduct(categorytype) {
-  //   try {
-  //     setIsLoading(true); // Start loading
-  //     setError(null); // Reset any previous errors
-  //     const response = await fetch(`${Base_Url}/category/${categorytype}`); // Fetch data
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch products"); // Handle non-200 responses
-  //     }
-  //     const data = await response.json(); // Parse JSON
-  //     console.log(data);
-  //     setProducts(data); // Set fetched data to state
-  //   } catch (err) {
-  //     setError(err.message); // Set error message
-  //   } finally {
-  //     setIsLoading(false); // Stop loading
-  //   }
-  // }
-
   return (
     <ProductContext.Provider value={{ products, isLoading, error }}>
       {children}

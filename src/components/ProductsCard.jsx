@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
+// eslint-disable-next-line react/prop-types
 function ProductsCard({ imageSrc, text, price, id }) {
   return (
-    <NavLink to='/ProductDetailPage/{id}'>
+    <NavLink to={`/product/${id}`}>
       <div className='flex flex-col group hover:opacity-[0.9]  h-[373px] w-[280px] p-2'>
         <img
           src={imageSrc}

@@ -30,11 +30,25 @@
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[119px]   py-3 text-xl rounded bg-white hover:bg-gray-100 text-black   transition-opacity duration-300;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
   font-family: "League Spartan", sans-serif;
 }
 

@@ -38,6 +38,7 @@ function ProductSide() {
             imageSrc={product.image}
             text={product.title}
             price={product.price}
+            id={product.id}
           />
         ))}
       </div>
