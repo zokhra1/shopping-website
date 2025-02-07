@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 
 # LIVE DEMO 
-https://apperalwebsite.netlify.app/
+https://myshoopping.netlify.app/
