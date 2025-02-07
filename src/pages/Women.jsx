@@ -1,6 +1,6 @@
 import CategoryNav from "../components/CategoryNav";
 import LastArrivals from "../components/LastArrivals";
-import SaleHero from "../components/salehero";
+import SaleHero from "../components/SaleHero";
 import TwoPraductCard from "../components/TwoPraductCard";
 
 function Women() {
